@@ -56,9 +56,9 @@ class DefaultAdapter implements LoggerConfigurator
 
     /** Defines which adapter should be used for parsing which format. */
     private $adapters = array(
-        self::FORMAT_XML => 'LoggerConfigurationAdapterXML',
-        self::FORMAT_INI => 'LoggerConfigurationAdapterINI',
-        self::FORMAT_PHP => 'LoggerConfigurationAdapterPHP',
+        self::FORMAT_XML => '\\log4php\\Configurator\\XmlAdapter',
+        self::FORMAT_INI => '\\log4php\\Configurator\\IniAdapter',
+        self::FORMAT_PHP => '\\log4php\\Configurator\\PhpAdapter',
     );
 
     /** Default configuration; used if no configuration file is provided. */
@@ -70,9 +70,9 @@ class DefaultAdapter implements LoggerConfigurator
         ),
         'appenders' => array(
             'default' => array(
-                'class'  => 'LoggerAppenderEcho',
+                'class'  => '\\log4php\\Appender\\EchoAppender',
                 'layout' => array(
-                    'class' => 'LoggerLayoutTTCC',
+                    'class' => '\\log4php\\Layout\\TtccLayout',
                 ),
             ),
         ),
