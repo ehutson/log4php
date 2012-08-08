@@ -130,7 +130,7 @@ class LoggerLoggingEvent
      * @param Exception $throwable The throwable associated with logging event
      */
     public function __construct($fqcn, $logger, $priority, $message,
-                                $timeStamp = null, Exception $throwable = null)
+                                $timeStamp = null, \Exception $throwable = null)
     {
         $this->fqcn = $fqcn;
         if ($logger instanceof Logger) {
